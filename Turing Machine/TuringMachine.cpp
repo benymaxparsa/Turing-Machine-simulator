@@ -82,6 +82,7 @@ void Rules()
 
 void InitTM()
 {
+	Rules();
 	TuringMachine tm(rules, 'a', 'h', '0');
 	tm.Run();
 }
