@@ -13,6 +13,8 @@ class TuringMachine
 public:
 	TuringMachine(Program program, char start, char halt, char init);
 	~TuringMachine();
+	void Run();
+	int GetMoves();
 
 private:
 	Tape tape;
@@ -20,6 +22,12 @@ private:
 	char start, halt, init, state;
 	int moves;
 	int pos;
+	void PrintTape();
+	void UpdateTape(char oldSymbol, char newSymbol);
+	void UpdateState(char newState);
+	void MoveHead(char move);
+	
+
 };
 
 TuringMachine::TuringMachine(Program program, char start, char halt, char init) : 
@@ -32,15 +40,53 @@ TuringMachine::~TuringMachine()
 {
 }
 
-
-
-void InitTM()
+void TuringMachine::Run()
 {
-	Program rules;
+
+}
+
+int TuringMachine::GetMoves()
+{
+	return 0;
+}
+
+void TuringMachine::PrintTape()
+{
+}
+
+void TuringMachine::UpdateTape(char oldSymbol, char newSymbol)
+{
+
+}
+
+void TuringMachine::UpdateState(char newState)
+{
+}
+
+void TuringMachine::MoveHead(char move)
+{
+}
+
+
+
+Program rules;
+void Rules()
+{
 	rules.insert(make_pair("a0", "b1r"));
 	rules.insert(make_pair("b0", "c0r"));
 	rules.insert(make_pair("c0", "c1l"));
 	rules.insert(make_pair("a1", "h1r"));
 	rules.insert(make_pair("b1", "b1r"));
 	rules.insert(make_pair("c1", "a1l"));
+}
+
+void InitTM()
+{
+	TuringMachine tm(rules, 'a', 'h', '0');
+	tm.Run();
+}
+
+int main()
+{
+	InitTM();
 }
